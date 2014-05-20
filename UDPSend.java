@@ -36,11 +36,11 @@ class UDPSend {
 
 	private static void send(String msg){
 		try {
-            DatagramSocket s = new DatagramSocket();
-            s.send(new DatagramPacket(msg.getBytes(), msg.length(), local,server_port));
-            s.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+	            DatagramSocket s = new DatagramSocket();
+	            s.send(new DatagramPacket(msg.getBytes(), msg.length(), local,server_port));
+	            s.close();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
 	}
 }
