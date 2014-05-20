@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:flatui="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cschlisner.app.MainActivity"
+    tools:ignore="MergeRootFrame"
+    android:background="#252525">
+        <fragment
+            android:name="com.cschlisner.app.TouchFragment"
+            android:id="@+id/touch_frag"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#000"
+            android:layout_margin="16dp"
+            />
+    <EditText
+        android:id="@+id/hidden_input"
+        android:hint=""
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:cursorVisible="false"
+        android:textColor="#00000000"
+        android:ems="10"
+        android:singleLine="false"
+        android:inputType="textMultiLine"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+        <com.cengalabs.flatui.views.FlatButton
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            flatui:textAppearance="light"
+            flatui:isFullFlat="true"
+            flatui:theme="Dark"
+        android:text="Show Keyboard"
+        android:onClick="showKeyboard"
+        android:id="@+id/button_a"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45dp" />
+
+    <com.cengalabs.flatui.views.FlatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:id="@+id/disp_input"
+        android:singleLine="true"
+        flatui:textAppearance="light"
+        flatui:isFullFlat="true"
+        flatui:theme="Dark"
+        android:hint="...."
+        android:gravity="center"
+        android:layout_above="@+id/button_a"
+        android:layout_alignLeft="@+id/button_a"
+        android:layout_alignStart="@+id/button_a"
+        android:layout_alignRight="@+id/button_a"
+        android:layout_alignEnd="@+id/button_a" />
+
+    <com.cengalabs.flatui.views.FlatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        flatui:isFullFlat="false"
+        flatui:theme="Dark"
+        android:id="@+id/left_click"
+        android:onClick="clickMouse"
+        android:layout_below="@+id/touch_frag"
+        android:layout_alignLeft="@+id/touch_frag"
+        android:layout_alignStart="@+id/touch_frag"
+        android:layout_toLeftOf="@+id/hidden_input" />
+
+    <com.cengalabs.flatui.views.FlatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        flatui:isFullFlat="false"
+        flatui:theme="Dark"
+        android:id="@+id/right_click"
+        android:onClick="clickMouse"
+        android:layout_below="@+id/touch_frag"
+        android:layout_alignRight="@+id/touch_frag"
+        android:layout_alignEnd="@+id/touch_frag"
+        android:layout_toRightOf="@+id/hidden_input" />
+
+</RelativeLayout>

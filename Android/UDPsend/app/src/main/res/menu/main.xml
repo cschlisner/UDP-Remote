@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cschlisner.app.MainActivity"
+    android:background="#000">
+    
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/show_mbuttons"
+        android:checkable="true"
+        android:checked="true"
+        android:title="Show Mouse Buttons"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/restart_server"
+        android:title="Restart Cast Server"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+</menu>
