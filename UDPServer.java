@@ -61,18 +61,6 @@ class UDPServer
           bot.keyPress(keyCode);
           bot.keyRelease(keyCode);
         }
-        
-
-        // byte[] bytes = s.getBytes();
-        // for (byte b : bytes)
-        // {
-        //     int code = b;
-        //     // keycode only handles [A-Z] (which is ASCII decimal [65-90])
-        //     if (code > 96 && code < 123) code = code - 32;
-        //     bot.delay(40);
-        //     bot.keyPress(code);
-        //     bot.keyRelease(code);
-        // }
       }
 
       // Recieved format for mouse coordinates: MOUSE: xxxx yyyy
@@ -87,6 +75,7 @@ class UDPServer
           mouseY = Integer.parseInt(s.subSequence(marker+1, s.length()).toString()); 
       }
 
+      // for leapcast running on a linux machine
       private static void restartCastServer(Robot robot){
           robot.keyPress(KeyEvent.VK_SHIFT);
           robot.keyPress(KeyEvent.VK_CONTROL);
