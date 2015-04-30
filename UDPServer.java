@@ -28,10 +28,8 @@ class UDPServer
                       robot.keyRelease(KeyEvent.VK_BACK_SPACE); 
                     } 
                   }
-                  else { 
-                    if (message.equals("RESTARTCASTSERVER"))
-                      restartCastServer(robot);                                                    
-                    else if (message.equals("RIGHTCLICKD"))
+                  else {                                       
+                    if (message.equals("RIGHTCLICKD"))
                       robot.mousePress(InputEvent.BUTTON3_MASK);
                     else if (message.equals("RIGHTCLICKU"))
                       robot.mouseRelease(InputEvent.BUTTON3_MASK);
@@ -73,24 +71,5 @@ class UDPServer
           }
           mouseX = Integer.parseInt(s.subSequence(0, marker).toString());
           mouseY = Integer.parseInt(s.subSequence(marker+1, s.length()).toString()); 
-      }
-
-      // for leapcast running on a linux machine
-      private static void restartCastServer(Robot robot){
-          robot.keyPress(KeyEvent.VK_SHIFT);
-          robot.keyPress(KeyEvent.VK_CONTROL);
-          robot.keyPress(KeyEvent.VK_C);
-          robot.keyRelease(KeyEvent.VK_SHIFT);
-          robot.keyRelease(KeyEvent.VK_CONTROL);
-          robot.keyRelease(KeyEvent.VK_C);
-          try {
-            Thread.sleep(1000);
-          } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-          }
-          robot.keyPress(KeyEvent.VK_UP);
-          robot.keyRelease(KeyEvent.VK_UP);
-          robot.keyPress(KeyEvent.VK_ENTER);
-          robot.keyRelease(KeyEvent.VK_ENTER);
       }
 }
